@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block title %} Gestão RH - Página principal {% endblock title %} 
+
+{% block main %}
+<div class="row">
+    <div class="col-sm">Olá, {{ usuario.funcionario.nome }}!</div>
+    <div class="col-sm">
+        {% if usuario.funcionario.empresa %}
+            <a href="{% url 'edit-empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
+        {% else %}
+            <a href="{% url 'create-empresa' %}">Criar Empresa</a>
+        {% endif %}
+    </div>
+    <div class="col-sm"><a href="{% url 'logout' %}">Logout</a></div>
+</div>
+{% endblock %}
