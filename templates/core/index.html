@@ -4,7 +4,10 @@
 
 {% block main %}
 <div class="row">
-    <div class="col-sm">Olá, {{ usuario.funcionario.nome }}!</div>
+    <div class="col-sm">
+        Olá, {{ usuario.funcionario.nome }}!
+        <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionários</a>
+    </div>
     <div class="col-sm">
         {% if usuario.funcionario.empresa %}
             <a href="{% url 'edit-empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
