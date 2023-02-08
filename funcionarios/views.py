@@ -27,7 +27,7 @@ class FuncionarioDelete(DeleteView):
 class FuncionarioCreate(CreateView):
     model = Funcionario
     fields = ['nome','departamentos']
-    extra_context = {'operacao':'Insert'}
+    extra_context = {'operacao':'Inserir'}
 
     def form_valid(self, form):
         funcionario = form.save(commit=False)
