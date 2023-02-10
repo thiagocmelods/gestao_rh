@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
-
+{% load bootstrap %}
 
 {% block main %}
+    <h1>Editar Empresa</h1>
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p}}
-        <input type="submit" value="Salvar">
+        {{ form|bootstrap}}
+        <br>
+        <input type="submit" value="Salvar" class="btn btn-success">        
+        <a href="{% url 'home' %}" class="btn btn-secondary">Voltar</a>
     </form>
+    <br>
+    
 
 {% endblock %}

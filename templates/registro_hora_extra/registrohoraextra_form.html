@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
 
+
+
 {% block main %}
 
-    <h1>{{ operacao }} Departamento</h1> 
+    <h1>{{ operacao }} Hora Extra</h1> 
     <form action="" method="post">
         {% csrf_token %}
-        {{ form|bootstrap}}
+        {{ form|bootstrap }}
         <br>
         <input type="submit" value="Salvar" class="btn btn-success">
-        <a href="{% url 'list_departamentos' %}" class="btn btn-secondary">Voltar</a>
+        <a href="{% url 'list_hora_extra' %}" class="btn btn-secondary">Voltar</a>
     </form>
 
 {% endblock %}

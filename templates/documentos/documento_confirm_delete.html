@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+    <h1>Excluir</h1> 
+    <form action="" method="post">
+        {% csrf_token %}
+        <h5>Confirma a exclusão de {{ object }}?</h3>
+        {{ form.as_p}}
+        <input type="submit" value="Confirmar" class="btn btn-danger">
+        <a href="{% url 'list_documentos' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+
+{% endblock %}

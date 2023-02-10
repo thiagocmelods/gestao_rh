@@ -5,9 +5,11 @@
 {% block main %}
 <div class="row">
     <div class="col-sm">
-        Olá, {{ usuario.funcionario.nome }}!
-        <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionários</a>
-        <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a>
+        Olá, {{ usuario.funcionario.nome }}! <br>
+        <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionários</a> <br>
+        <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a> <br>
+        <a href="{% url 'list_documentos' %}">Gerenciar Documentos</a> <br>
+        <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a> <br>
     </div>
     <div class="col-sm">
         {% if usuario.funcionario.empresa %}

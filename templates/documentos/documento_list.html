@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Listagem de documentos</h1>
+
+    {% for documento in object_list %}
+        {{ documento }} - Funcionário: {{ documento.proprietario }} - <a href="{{ documento.arquivo.url }}">Link</a>
+        <a href="{% url 'update_documento' documento.id %}"><i class="bi bi-pencil-square" style="color: gray;"></i></a>
+        <a href="{% url 'delete_documento' documento.id %}"><i class="bi bi-trash" style="color: red;"></i></a>
+        <br>
+    {% endfor %}
+    <br>
+    <a href="{% url 'create_documento' %}" class="btn btn-info">Novo</a>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Voltar</a>
+{% endblock main %}

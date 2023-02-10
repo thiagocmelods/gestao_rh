@@ -16,7 +16,7 @@ class FuncionariosList(ListView):
 class FuncionarioEdit(UpdateView):
     model = Funcionario
     fields = ['nome','departamentos']
-    extra_context = {'operacao':'Edit'}
+    extra_context = {'operacao':'Editar'}
 
 
 class FuncionarioDelete(DeleteView):

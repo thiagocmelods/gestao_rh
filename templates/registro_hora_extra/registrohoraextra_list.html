@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Listagem de Horas Extras</h1>
+
+    {% for hora_extra in object_list %}
+        {{ hora_extra.funcionario }} - Quant.: {{ hora_extra.horas }} - Motivo: {{ hora_extra.motivo }}
+        <a href="{% url 'update_hora_extra' hora_extra.id %}"><i class="bi bi-pencil-square" style="color: gray;"></i></a>
+        <a href="{% url 'delete_hora_extra' hora_extra.id %}"><i class="bi bi-trash" style="color: red;"></i></a>
+        <br>
+    {% endfor %}
+    <br>
+    <a href="{% url 'create_hora_extra' %}" class="btn btn-info">Novo</a>
+    <a href="{% url 'home' %}" class="btn btn-secondary">Voltar</a>
+{% endblock main %}

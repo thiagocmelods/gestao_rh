@@ -3,13 +3,13 @@
 
 {% block main %}
 
-    <h1>{{ operacao }} Departamento</h1> 
-    <form action="" method="post">
+    <h1>{{ operacao }} Documento</h1> 
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|bootstrap}}
         <br>
         <input type="submit" value="Salvar" class="btn btn-success">
-        <a href="{% url 'list_departamentos' %}" class="btn btn-secondary">Voltar</a>
+        <a href="{% url 'list_documentos' %}" class="btn btn-secondary">Voltar</a>
     </form>
 
 {% endblock %}
